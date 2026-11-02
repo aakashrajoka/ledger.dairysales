@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#174c3c">
+  <meta name="description" content="A private, offline milk sales ledger for your dairy farm.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+  <title>Milk Ledger</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section id="welcome" class="welcome" aria-label="Welcome">
+    <div class="welcome-mark">✳</div><div class="welcome-name">Akash Rajoka</div><div class="welcome-caption">MILK LEDGER</div>
+  </section>
+  <main id="app" class="app-shell" hidden>
+    <header class="topbar">
+      <div><div class="eyebrow" data-i18n="farmLedger">DAIRY LEDGER</div><h1 id="farmTitle">Milk Ledger</h1></div>
+      <button id="settingsBtn" class="icon-button" aria-label="Settings" title="Settings">⚙</button>
+    </header>
+    <section id="authView" class="auth-card" hidden></section>
+    <section id="mainView" hidden>
+      <div class="month-strip"><button id="prevMonth" class="month-arrow" aria-label="Previous month">‹</button><button id="monthLabel" class="month-label"></button><button id="nextMonth" class="month-arrow" aria-label="Next month">›</button></div>
+      <div class="tabs" role="tablist"><button class="tab active" data-shift="morning" data-i18n="morning">Morning</button><button class="tab" data-shift="evening" data-i18n="evening">Evening</button></div>
+      <section id="totals" class="totals-card"></section>
+      <div class="section-heading"><div><h2 data-i18n="buyers">Buyers</h2><p id="buyerCount"></p></div><button id="addBuyer" class="primary small">＋ <span data-i18n="addBuyer">Add buyer</span></button></div>
+      <div id="buyerList" class="buyer-list"></div>
+      <footer class="combined-total" id="combinedTotal"></footer>
+      <section id="buyerDetailView" class="buyer-detail" hidden></section>
+    </section>
+    <section id="statementView" class="statement-view" hidden></section>
+  </main>
+  <div id="modalRoot"></div>
+  <script src="app.js"></script>
+</body>
+</html>
